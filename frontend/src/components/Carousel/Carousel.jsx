@@ -11,7 +11,7 @@ const Carousel = () => {
   const slides = [
     {
       url: "https://dnm.nflximg.net/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABShbW-dwcF0WdzxNH6Wrw42S0VoyMM8gvcOoQ4PhLLD2F-NMiotNJBl5sQGjhKeSh0FuMFj8CFaFkL955pBwjNPpwL4qhGHc5wOcTrhQUnzOcB162aWglEX60Dlbm-VJo0YwIw.jpg",
-      title: "Beautiful Mountain Lake",
+      title: "Kungfu Panda Mountain Lake",
       description: "Serene mountain lake surrounded by pine forests",
     },
     {
