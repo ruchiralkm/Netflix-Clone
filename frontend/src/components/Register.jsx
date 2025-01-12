@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./CSS/RegLog.css";
+import WelcomeNav from "./Nav/WecomeNav";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -23,16 +24,17 @@ const Register = () => {
 
   return (
     <>
+      <WelcomeNav />
       <div className="bbg">
         <div
-          className="flex items-center justify-center min-h-screen bg-cover bg-center"
+          className="flex items-center justify-center min-h-screen bg-center bg-cover"
           style={{
             backgroundImage:
               "url('https://source.unsplash.com/random/1600x900')",
           }}
         >
-          <div className="bg-black bg-opacity-70 p-10 rounded-lg shadow-lg w-96">
-            <h2 className="text-4xl font-bold text-white text-center mb-6">
+          <div className="p-10 bg-black rounded-lg shadow-lg bg-opacity-70 w-96">
+            <h2 className="mb-6 text-4xl font-bold text-center text-white">
               Sign Up
             </h2>
             <form onSubmit={handleSubmit}>
@@ -43,7 +45,7 @@ const Register = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full px-4 py-2 mb-4 text-white rounded-md bg-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full px-4 py-2 mb-4 text-white bg-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               />
               {/* Email Input */}
               <input
@@ -52,7 +54,7 @@ const Register = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="w-full px-4 py-2 mb-4 text-white rounded-md bg-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full px-4 py-2 mb-4 text-white bg-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               />
               {/* Password Input */}
               <input
@@ -61,12 +63,12 @@ const Register = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, password: e.target.value })
                 }
-                className="w-full px-4 py-2 mb-4 text-white rounded-md bg-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full px-4 py-2 mb-4 text-white bg-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               />
               {/* Sign Up Button */}
               <button
                 type="submit"
-                className="w-full py-2 text-white bg-red-500 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full py-2 text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
               >
                 Sign Up
               </button>
