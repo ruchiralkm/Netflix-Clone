@@ -10,6 +10,13 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check for admin credentials
+    if (formData.email === "admin@gmail.com" && formData.password === "admin") {
+      navigate("/AdminHome");
+      return;
+    }
+
     try {
       const { data } = await axios.post(
         "http://localhost:5000/api/users/login",
