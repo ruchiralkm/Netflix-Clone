@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import AdminNav from "../Nav/AdminNav";
+import "./css/AdminAddMovies.css";
 
 const AdminAddMovies = () => {
   const [movieData, setMovieData] = useState({
@@ -10,6 +11,7 @@ const AdminAddMovies = () => {
     genre: "",
     year: "",
     rating: "",
+    movieLink: "",
   });
 
   const handleChange = (e) => {
@@ -29,6 +31,7 @@ const AdminAddMovies = () => {
     formData.append("genre", movieData.genre);
     formData.append("year", movieData.year);
     formData.append("rating", movieData.rating);
+    formData.append("movieLink", movieData.movieLink);
 
     try {
       const response = await axios.post(
@@ -48,44 +51,105 @@ const AdminAddMovies = () => {
   };
 
   return (
-    <div>
+    <>
       <AdminNav />
-      <h1>Add Movies</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Title:</label>
-          <input type="text" name="title" required onChange={handleChange} />
+      <div className="bgImg">
+        <div className="flex flex-col items-center min-h-screen py-10">
+          <form
+            onSubmit={handleSubmit}
+            className="w-full max-w-lg p-6 bg-black rounded-lg shadow-lg"
+          >
+            <h1 className="mb-6 text-4xl font-bold text-white">
+              Add New Movies
+            </h1>
+            <div className="mb-4">
+              <label className="block mb-2 font-medium text-gray-700">
+                Title
+              </label>
+              <input
+                type="text"
+                name="title"
+                required
+                placeholder="Movie Title"
+                onChange={handleChange}
+                className="w-full px-4 py-2 bg-gray-900 border border-none rounded-lg shadow-sm"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2 font-medium text-gray-700">
+                Movie Image
+              </label>
+              <input
+                type="file"
+                name="movieImage"
+                required
+                onChange={handleFileChange}
+                className="w-full px-4 py-2 border border-none rounded-lg shadow-sm bg-slate-900"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2 font-medium text-gray-700">
+                Genre
+              </label>
+              <input
+                type="text"
+                name="genre"
+                required
+                onChange={handleChange}
+                placeholder="Action, Comedy, etc."
+                className="w-full px-4 py-2 bg-gray-900 border border-none rounded-lg shadow-sm"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2 font-medium text-gray-700">
+                Year
+              </label>
+              <input
+                type="number"
+                name="year"
+                required
+                onChange={handleChange}
+                placeholder="Release Year"
+                className="w-full px-4 py-2 bg-gray-900 border border-none rounded-lg shadow-sm"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2 font-medium text-gray-700">
+                Rating
+              </label>
+              <input
+                type="number"
+                name="rating"
+                step="0.1"
+                required
+                placeholder="1.5, 2.5, 3.5, etc."
+                onChange={handleChange}
+                className="w-full px-4 py-2 bg-gray-900 border border-none rounded-lg shadow-sm"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block mb-2 font-medium text-gray-700">
+                Movie Link
+              </label>
+              <input
+                type="text"
+                name="movieLink"
+                required
+                onChange={handleChange}
+                placeholder="https://www.example.com"
+                className="w-full px-4 py-2 bg-gray-900 border border-none rounded-lg shadow-sm"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full py-2 font-semibold text-white transition-all duration-300 bg-red-600 rounded-lg shadow-md hover:bg-red-700"
+            >
+              Add Movie
+            </button>
+          </form>
         </div>
-        <div>
-          <label>Movie Image:</label>
-          <input
-            type="file"
-            name="movieImage"
-            required
-            onChange={handleFileChange}
-          />
-        </div>
-        <div>
-          <label>Genre:</label>
-          <input type="text" name="genre" required onChange={handleChange} />
-        </div>
-        <div>
-          <label>Year:</label>
-          <input type="number" name="year" required onChange={handleChange} />
-        </div>
-        <div>
-          <label>Rating:</label>
-          <input
-            type="number"
-            name="rating"
-            step="0.1"
-            required
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit">Add Movie</button>
-      </form>
-    </div>
+      </div>
+    </>
   );
 };
 

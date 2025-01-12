@@ -24,10 +24,10 @@ const getMovies = async (req, res) => {
 
 // Add a new movie Controller
 const addMovie = async (req, res) => {
-  const { title, genre, year, rating } = req.body;
+  const { title, genre, year, rating, movieLink } = req.body;
 
   // Validate the required fields
-  if (!title || !req.file || !genre || !year || !rating) {
+  if (!title || !req.file || !genre || !year || !rating || !movieLink) {
     return res.status(400).json({ message: "All fields are required" });
   }
 
@@ -39,6 +39,7 @@ const addMovie = async (req, res) => {
       genre,
       year,
       rating,
+      movieLink,
     });
 
     // Save the movie to the database
