@@ -5,20 +5,39 @@ import "./css/AdminAddMovies.css";
 const AdminViewMovies = () => {
   const [movies, setMovies] = useState([]);
 
-  // Fetch movies from the backend
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/api/Movies/movies");
-        const data = await response.json();
-        setMovies(data); // Set the fetched data in the state
-      } catch (error) {
-        console.log("Error fetching movies:", error);
-      }
-    };
-
     fetchMovies();
   }, []);
+
+  const fetchMovies = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/Movies/movies");
+      const data = await response.json();
+      setMovies(data);
+    } catch (error) {
+      console.log("Error fetching movies:", error);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/Movies/delete-movie/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (response.ok) {
+        // Remove the movie from the state
+        setMovies(movies.filter((movie) => movie._id !== id));
+      } else {
+        console.log("Failed to delete movie");
+      }
+    } catch (error) {
+      console.log("Error deleting movie:", error);
+    }
+  };
 
   return (
     <>
@@ -85,7 +104,10 @@ const AdminViewMovies = () => {
                           </a>
                         </td>
                         <td className="px-6 py-4 text-gray-700">
-                          <button className="w-16 p-1 text-white bg-red-600 rounded-md">
+                          <button
+                            className="w-16 p-1 text-white bg-red-600 rounded-md"
+                            onClick={() => handleDelete(movie._id)}
+                          >
                             Delete
                           </button>
                         </td>

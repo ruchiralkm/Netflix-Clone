@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Play, Info } from "lucide-react";
 
 // import image1 from "../../assets/card1.jpg";
 
@@ -10,24 +11,28 @@ const Carousel = () => {
   // Sample images
   const slides = [
     {
-      url: "https://dnm.nflximg.net/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABShbW-dwcF0WdzxNH6Wrw42S0VoyMM8gvcOoQ4PhLLD2F-NMiotNJBl5sQGjhKeSh0FuMFj8CFaFkL955pBwjNPpwL4qhGHc5wOcTrhQUnzOcB162aWglEX60Dlbm-VJo0YwIw.jpg",
-      title: "Kungfu Panda Mountain Lake",
-      description: "Serene mountain lake surrounded by pine forests",
+      url: "https://images4.alphacoders.com/119/1198452.jpg",
+      title: "Black Panther",
+      description:
+        "Black Panther is a groundbreaking Marvel film that follows T'Challa, the newly crowned king of Wakanda, as he faces challenges from foes and wrestles with his responsibilities to protect his nation and its mystical technology.",
     },
     {
-      url: "https://www.heavenofhorror.com/wp-content/uploads/2023/11/locked-in-2023-netflix-review.jpg",
-      title: "Coastal Sunset",
-      description: "Stunning sunset view over the ocean",
+      url: "https://rare-gallery.com/mocahbig/391592-kate-2021-netflix-movie-netflix-movie-2021-poster.jpg",
+      title: "Birds of Prey",
+      description:
+        "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn) follows Harley Quinn as she teams up with a group of female vigilantes to take down a ruthless crime lord in Gotham City.",
     },
     {
-      url: "https://i0.wp.com/theilluminerdi.com/wp-content/uploads/2021/01/outside-the-wire-wide.jpg?w=1280&ssl=1",
-      title: "Urban Architecture",
-      description: "Modern city skyline at twilight",
+      url: "https://redcapes.it/wp-content/uploads/2018/07/stranger-1.jpg",
+      title: "Stranger Things",
+      description:
+        "Stranger Things is a nostalgic sci-fi thriller set in the 1980s, revolving around a group of kids in the small town of Hawkins who encounter mysterious government experiments and supernatural forces while searching for their missing friend. The series brilliantly blends suspense, horror, and heartwarming moments.",
     },
     {
-      url: "https://greenwavegazette.org/wp-content/uploads/2019/01/Bird-Box-poster-horizontal.jpg",
-      title: "Desert Landscape",
-      description: "Vast desert dunes under clear blue skies",
+      url: "https://wallpapers.com/images/featured/money-heist-segtwbhffwy01w82.jpg",
+      title: "Money Heist",
+      description:
+        "Money Heist (La Casa de Papel) is a thrilling Spanish TV show that follows a group of criminals, led by The Professor, as they execute heists on the Royal Mint of Spain and the Bank of Spain. Their meticulously planned crimes unfold amid intense drama and high-stakes tension.",
     },
   ];
 
@@ -82,12 +87,22 @@ const Carousel = () => {
             {/* Caption overlay */}
             <div className="absolute bottom-0 left-0 right-0 px-8 py-8 bg-gradient-to-t from-black/70 to-transparent">
               <div className="mx-auto max-w-7xl">
-                <h3 className="mb-2 text-2xl font-bold text-white md:text-3xl">
+                <h3 className="mb-2 text-2xl font-bold text-white md:text-5xl">
                   {slide.title}
                 </h3>
                 <p className="max-w-2xl text-base text-white/90 md:text-lg">
                   {slide.description}
                 </p>
+                <div className="flex flex-wrap gap-4 mt-4">
+                  <button className="flex items-center gap-2 px-8 py-3 text-lg font-semibold text-white transition-colors bg-red-600 rounded-md hover:bg-red-700">
+                    <Play size={20} />
+                    Play Now
+                  </button>
+                  <button className="flex items-center gap-2 px-8 py-3 text-lg font-semibold text-white transition-colors rounded-md bg-gray-700/50 hover:bg-gray-700">
+                    <Info size={20} />
+                    More Info
+                  </button>
+                </div>
               </div>
             </div>
           </div>

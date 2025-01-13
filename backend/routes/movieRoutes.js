@@ -1,4 +1,3 @@
-// movieRoutes.js
 const express = require("express");
 const multer = require("multer");
 const movieController = require("../controllers/movieController"); // Ensure the correct path to controller
@@ -22,9 +21,12 @@ router.get("/movies", movieController.getMovies); // Calls getMovies from movieC
 // Route to Add a New Movie
 router.post(
   "/add-movie",
-  upload.single("movieImage"),
+  upload.single("movieImage"), // Handles image upload
   movieController.addMovie
 ); // Calls addMovie from movieController
+
+// Route to Delete a Movie
+router.delete("/delete-movie/:id", movieController.deleteMovie); // Calls deleteMovie from movieController
 
 // Export the router
 module.exports = router;

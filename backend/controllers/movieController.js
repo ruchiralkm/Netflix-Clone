@@ -56,8 +56,27 @@ const addMovie = async (req, res) => {
   }
 };
 
+// Delete Movie Controller
+const deleteMovie = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const movie = await Movie.findByIdAndDelete(id);
+
+    if (!movie) {
+      return res.status(404).json({ message: "Movie not found" });
+    }
+
+    res.status(200).json({ message: "Movie deleted successfully" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Failed to delete movie" });
+  }
+};
+
 // Export controllers
 module.exports = {
   getMovies,
   addMovie,
+  deleteMovie,
 };
