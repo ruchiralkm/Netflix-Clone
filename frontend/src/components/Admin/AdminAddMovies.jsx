@@ -72,7 +72,7 @@ const AdminAddMovies = () => {
                 required
                 placeholder="Movie Title"
                 onChange={handleChange}
-                className="w-full px-4 py-2 bg-gray-900 border border-none rounded-lg shadow-sm"
+                className="w-full px-4 py-2 text-white bg-gray-900 border border-none rounded-lg shadow-sm"
               />
             </div>
             <div className="mb-4">
@@ -84,7 +84,7 @@ const AdminAddMovies = () => {
                 name="movieImage"
                 required
                 onChange={handleFileChange}
-                className="w-full px-4 py-2 border border-none rounded-lg shadow-sm bg-slate-900"
+                className="w-full px-4 py-2 text-white border border-none rounded-lg shadow-sm bg-slate-900"
               />
             </div>
             <div className="mb-4">
@@ -97,7 +97,7 @@ const AdminAddMovies = () => {
                 required
                 onChange={handleChange}
                 placeholder="Action, Comedy, etc."
-                className="w-full px-4 py-2 bg-gray-900 border border-none rounded-lg shadow-sm"
+                className="w-full px-4 py-2 text-white bg-gray-900 border border-none rounded-lg shadow-sm"
               />
             </div>
             <div className="mb-4">
@@ -110,7 +110,7 @@ const AdminAddMovies = () => {
                 required
                 onChange={handleChange}
                 placeholder="Release Year"
-                className="w-full px-4 py-2 bg-gray-900 border border-none rounded-lg shadow-sm"
+                className="w-full px-4 py-2 text-white bg-gray-900 border border-none rounded-lg shadow-sm"
               />
             </div>
             <div className="mb-4">
@@ -124,7 +124,7 @@ const AdminAddMovies = () => {
                 required
                 placeholder="1.5, 2.5, 3.5, etc."
                 onChange={handleChange}
-                className="w-full px-4 py-2 bg-gray-900 border border-none rounded-lg shadow-sm"
+                className="w-full px-4 py-2 text-white bg-gray-900 border border-none rounded-lg shadow-sm"
               />
             </div>
             <div className="mb-4">
@@ -137,7 +137,7 @@ const AdminAddMovies = () => {
                 required
                 onChange={handleChange}
                 placeholder="https://www.example.com"
-                className="w-full px-4 py-2 bg-gray-900 border border-none rounded-lg shadow-sm"
+                className="w-full px-4 py-2 text-white bg-gray-900 border border-none rounded-lg shadow-sm"
               />
             </div>
             <button

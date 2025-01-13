@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [searchTerm, setSearchTerm] = useState(""); // State for search input
+  const navigate = useNavigate();
 
   // Fetch movies from the backend
   useEffect(() => {
@@ -20,12 +21,26 @@ const Movies = () => {
     fetchMovies();
   }, []);
 
+  // Filter movies based on the search term
+  const filteredMovies = movies.filter((movie) =>
+    movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="mt-[-220px]">
-      <div className="flex items-center justify-center min-h-screen p-4 bg-black">
+    <div className="mt-[10px]">
+      <div className="flex flex-col items-center min-h-screen p-4 bg-black">
+        {/* Search Field */}
+        <input
+          type="text"
+          placeholder="Search your favourite movies..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full max-w-md p-2 mb-6 text-white border border-gray-900 rounded-md bg-slate-800 focus:outline-none focus:ring-2 focus:ring-red-600"
+        />
+
         <div className="grid w-full grid-cols-1 gap-6 max-w-7xl sm:grid-cols-4">
-          {movies.length > 0 ? (
-            movies.map((movie) => (
+          {filteredMovies.length > 0 ? (
+            filteredMovies.map((movie) => (
               <div
                 key={movie._id}
                 className="overflow-hidden transition-transform duration-300 bg-[#0F0F0F] rounded-lg shadow-lg hover:scale-105"
