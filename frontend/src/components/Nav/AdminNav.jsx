@@ -54,7 +54,7 @@ const AdminNav = () => {
         {/* Desktop Menu */}
         <div className="hidden space-x-8 text-white lg:flex">
           <button className="w-auto p-2 text-white">
-            <Link to="/login">Home</Link>
+            <Link to="/AdminHome">Home</Link>
           </button>
           <div className="relative">
             <button
