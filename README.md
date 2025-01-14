@@ -65,10 +65,10 @@ If you are interesting, Please give the star ✨
 <h3>✨This project is open-source | Designed by Ruchira Kaluarachchi | www.ruchiralk.me ✨</h3>
 
 # Preview
-<img src="https://raw.githubusercontent.com/ruchiralkm/Netflix-Clone/refs/heads/main/preview/welcome.png?token=GHSAT0AAAAAAC5ERN6FHD54EONROE7ZMCO2Z4FJLZQ" style="width:600px; height:auto;">
-<img src="https://raw.githubusercontent.com/ruchiralkm/Netflix-Clone/refs/heads/main/preview/reg.png?token=GHSAT0AAAAAAC5ERN6EKETLIOHXXZKIMJOMZ4FJNNA" style="width:600px; height:auto;">
-<img src="https://raw.githubusercontent.com/ruchiralkm/Netflix-Clone/refs/heads/main/preview/home.png?token=GHSAT0AAAAAAC5ERN6EMJ43JMX4IUK7YEVSZ4FJN2Q" style="width:600px; height:auto;">
-<img src="https://raw.githubusercontent.com/ruchiralkm/Netflix-Clone/refs/heads/main/preview/viewmovie.png?token=GHSAT0AAAAAAC5ERN6F3EWNAYVTOKRWLU5YZ4FJPGA" style="width:600px; height:auto;">
+<img src="https://github.com/ruchiralkm/Netflix-Clone/blob/main/preview/welcome.png?raw=true" style="width:600px; height:auto;">
+<img src="https://github.com/ruchiralkm/Netflix-Clone/blob/main/preview/reg.png?raw=true" style="width:600px; height:auto;">
+<img src="https://github.com/ruchiralkm/Netflix-Clone/blob/main/preview/home.png?raw=true" style="width:600px; height:auto;">
+<img src="https://github.com/ruchiralkm/Netflix-Clone/blob/main/preview/viewmovie.png?raw=true" style="width:600px; height:auto;">
 <img src="https://github.com/ruchiralkm/Netflix-Clone/blob/main/preview/addMovies.png?raw=true" style="width:600px; height:auto;">
 <img src="https://github.com/ruchiralkm/Netflix-Clone/blob/main/preview/viewMovies.png?raw=true" style="width:600px; height:auto;">
 
