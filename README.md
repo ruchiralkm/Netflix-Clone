@@ -29,7 +29,7 @@ This is a full-stack web application built using the MERN stack (MongoDB, Expres
 <h2>1. Clone the project</h2>
 
 ```bash
-https://github.com/ruchiralkm/Netflix-Clone.git
+git clone https://github.com/ruchiralkm/Netflix-Clone.git
 ```
 
 <h3>Back-end node modules install and run the server</h3>
